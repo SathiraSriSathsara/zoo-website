@@ -1,0 +1,43 @@
+.container-fluid {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.logo {
+    padding: 15px;
+}
+
+header {
+    margin: 0px;
+    padding: 0px;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login {
+    margin: auto;
+    margin-top: 90px;
+    background-color: rgba(255, 255, 255, 0.877);
+    width: 35%;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-tumb {
+    position: relative;
+    text-align: center;
+    color: white;
+}
