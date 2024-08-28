@@ -1,3 +1,32 @@
+<?php 
+include ("./event.php"); 
+session_start();
+$msg = '';
+
+if(isset($_POST["btnAdd"])){
+    $event = new Event();
+    $event->setName($_POST["txtName"]);
+    $event->setShortDescription($_POST["txtShortDesc"]);
+    $event->setDescription($_POST["txtDesc"]);
+    $event->setImage("");
+    $id = $event->add();
+
+    if ($id > 0) {
+        // Upload image
+        $info = new SplFileInfo($_FILES["txtImage"]["name"]);
+        $imageName = $id . '.' . $info->getExtension(); // Create the image name
+        $newName = '../../../images/event-images/' . $imageName;
+        $event->setImage($imageName); // Set only the image name
+        $event->setId($id);
+        move_uploaded_file($_FILES["txtImage"]["tmp_name"], $newName);
+        $event->updateImage(); // Update the image name in the database
+        $msg = "Event added successfully!";
+    } else {
+        $msg = "Failed to add event.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php $page = 'Events'; ?>
@@ -7,7 +36,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/main.css">
-    <title><?php echo $page; ?></title>
+    <title><?php echo $page; ?> - Admin Panel</title>
 </head>
 
 <body>
@@ -24,25 +53,29 @@
 
             <!-- content -->
             <div class="container p-3">
-                <h3 class="mb-4">Add event</h3>
-                <form>  
+                <h3 class="mb-4"><a href="./index.php"><img src="../../../images/icons/back.png" alt="" width="22px"></a> Add event</h3>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">ID</label>
+                        <input type="text" name="txtCode" class="form-control" readonly placeholder="Code will be generate automaticaly">
+                    </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" name="txtName" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Short description</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" name="txtShortDesc" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Description</label>
-                        <textarea name="" id="" class="form-control"></textarea>
+                        <textarea id="" name="txtDesc" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Image</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" name="txtImage" type="file" id="formFile">
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <input type="submit"  class="btn btn-primary" value="Add" name="btnAdd">
                 </form>
             </div>
 
@@ -52,6 +85,12 @@
 
     </div>
     </div>
+    <?php
+        if($msg){
+            echo '<div class="alert alert-success" role="alert">' . $msg . '</div>';
+        }
+    ?>
 </body>
 
 </html>
+

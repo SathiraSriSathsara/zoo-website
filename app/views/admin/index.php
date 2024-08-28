@@ -1,3 +1,31 @@
+<?php
+include("./event.php");
+session_start();
+
+$event = new Event();
+$events = $event->get();
+?>
+
+<?php 
+try{
+        $conn = connection::getConnection();
+
+        $stmt = $conn->prepare("SELECT * FROM user");
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+}catch(Exception $ex) {
+        echo "Error: " . $ex->getMessage();
+}
+
+if (isset($user['first_name'])) {
+    $userName = htmlspecialchars($user['first_name']);
+} else {
+    $userName = 'Guest'; // Default value if user data is not available
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php $page = 'Events'; ?>
@@ -7,7 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/main.css">
-    <title><?php echo $page; ?></title>
+    <title><?php echo $page; ?> - Admin Panel</title>
 </head>
 
 <body>
@@ -23,16 +51,37 @@
         <div class="pt-3">
 
             <!-- content -->
-            <div class="d-flex justify-content-start"><h4>Welcome to admin panel Sam</h4></div>
-            <div class="d-flex flex-row-reverse">
-                <div class="p-2"> <a href="./event-add.php"><button type="button" class="btn btn-primary">Add new event</button></a></div>
+            <div class="d-flex justify-content-start">
+                <h4>Hello, <?php echo $userName; ?> <img src="../../../images/icons/wave.png" alt="" width="22px"></h4>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="d-flex flex-row-reverse">
+                <div class="p-2"> <a href="./event-add.php"><button type="button" class="btn btn-primary"><img src="../../../images/icons/add.png" alt="" width="22px"> Add new event</button></a></div>
+                <div class="p-2"> <a href="./event-add.php"><button type="button" class="btn btn-primary"><a href="../../../index.php"><img src="../../../images/icons/home-white-50.png" alt="" width="22px"></a></button></a></div>
+            </div>
+            
+            <form action="./event-update.php" method="post">
+            <div class="container p-3">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+                <?php
+                foreach ($events as $event) {
+                    echo '
+                    <div class="col">
+                        <div class="card">
+                        <img src="../../../images/event-images/'. $event->getImage() .'" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">' . $event->getName() . '</h5>
+                            <p class="card-text">' . $event->getShortDescription() . '</p>
+                            <button type="submit" class="btn btn-dark" name="btnEdit" value="'.$event->getId().'"><img src="../../../images/icons/edit.png" alt="" width="22px"> Edit</button>
+                        </div>
+                        </div>
+                    </div>
+                ';
+                }
+                ?>
                 </div>
             </div>
+            </form>
 
         </div>
     </main>
