@@ -23,10 +23,8 @@ header {
 .login {
     margin: auto;
     margin-top: 90px;
-    background-color: rgba(255, 255, 255, 0.877);
-    width: 35%;
+    width: 31%;
     border-radius: 5px;
-    padding: 50px;
 }
 
 .centered {
@@ -41,3 +39,8 @@ header {
     text-align: center;
     color: white;
 }
+
+.text-shadow-bg-black {
+    text-shadow: 5px 5px #1a1919;
+  }
+  
