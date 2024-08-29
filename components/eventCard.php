@@ -1,3 +1,20 @@
+<?php 
+require('./app/connection.php');
+
+try{
+  $conn = connection::getConnection();
+
+  $stmt = $conn->prepare("SELECT * FROM user");
+  $stmt->execute();
+
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+}catch(Exception $ex) {
+  echo "Error: " . $ex->getMessage();
+}
+
+
+?>
+
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">

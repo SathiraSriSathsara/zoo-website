@@ -37,7 +37,6 @@
                     <li><a href="about-us.php" class="nav-link px-2 text-white">About us</a></li>
                     <li><a href="plan-your-visit.php" class="nav-link px-2 text-white">Plan your visit</a></li>
                     <li><a href="events.php" class="nav-link px-2 text-white">Events</a></li>
-                    <li><a href="animals.php" class="nav-link px-2 text-white">Animals</a></li>
                 ';
                 } else if ($page == 'About') {
                     echo '
@@ -45,7 +44,6 @@
                 <li><a href="about-us.php" class="nav-link px-2 text-success">About us</a></li>
                 <li><a href="plan-your-visit.php" class="nav-link px-2 text-white">Plan your visit</a></li>
                 <li><a href="events.php" class="nav-link px-2 text-white">Events</a></li>
-                <li><a href="animals.php" class="nav-link px-2 text-white">Animals</a></li>
             ';
                 } else if ($page == 'Plan your visit') {
                     echo '
@@ -53,7 +51,6 @@
                 <li><a href="about-us.php" class="nav-link px-2 text-white">About us</a></li>
                 <li><a href="plan-your-visit.php" class="nav-link px-2 text-success">Plan your visit</a></li>
                 <li><a href="events.php" class="nav-link px-2 text-white">Events</a></li>
-                <li><a href="animals.php" class="nav-link px-2 text-white">Animals</a></li>
             ';
                 } else if ($page == 'Events') {
                     echo '
@@ -61,7 +58,6 @@
                 <li><a href="about-us.php" class="nav-link px-2 text-white">About us</a></li>
                 <li><a href="plan-your-visit.php" class="nav-link px-2 text-white">Plan your visit</a></li>
                 <li><a href="events.php" class="nav-link px-2 text-success">Events</a></li>
-                <li><a href="animals.php" class="nav-link px-2 text-white">Animals</a></li>
             ';
                 } else if ($page == 'Animals') {
                     echo '
@@ -69,7 +65,6 @@
                 <li><a href="about-us.php" class="nav-link px-2 text-white">About us</a></li>
                 <li><a href="plan-your-visit.php" class="nav-link px-2 text-white">Plan your visit</a></li>
                 <li><a href="events.php" class="nav-link px-2 text-white">Events</a></li>
-                <li><a href="animals.php" class="nav-link px-2 text-success">Animals</a></li>
             ';
                 } else if ($page == 'Contact') {
                     echo '
@@ -77,7 +72,6 @@
                 <li><a href="about-us.php" class="nav-link px-2 text-white">About us</a></li>
                 <li><a href="plan-your-visit.php" class="nav-link px-2 text-white">Plan your visit</a></li>
                 <li><a href="events.php" class="nav-link px-2 text-white">Events</a></li>
-                <li><a href="animals.php" class="nav-link px-2 text-white">Animals</a></li>
             ';
                 } else if ($page == 'Volunteer') {
                     echo '
@@ -85,7 +79,6 @@
                 <li><a href="about-us.php" class="nav-link px-2 text-white">About us</a></li>
                 <li><a href="plan-your-visit.php" class="nav-link px-2 text-white">Plan your visit</a></li>
                 <li><a href="events.php" class="nav-link px-2 text-white">Events</a></li>
-                <li><a href="animals.php" class="nav-link px-2 text-white">Animals</a></li>
             ';
                 } 
             }

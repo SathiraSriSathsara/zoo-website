@@ -1,6 +1,5 @@
 <?php
 include("./foodOutlet.php");
-session_start();
 
 $msg = '';
 $foodOutlet = new FoodOutlet();

@@ -1,7 +1,6 @@
 <?php
 include("./event.php");
 $page = 'Events'; 
-session_start();
 $msg = '';
 $selectedEvent = null;
 

@@ -1,6 +1,5 @@
 <?php
 include("./foodOutlet.php");
-session_start();
 
 $foodOutlet = new FoodOutlet();
 $foodItems = $foodOutlet->get();

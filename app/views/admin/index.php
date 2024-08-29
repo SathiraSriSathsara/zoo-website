@@ -1,6 +1,5 @@
 <?php
-include("./event.php");
-session_start();
+require("./event.php");
 
 $event = new Event();
 $events = $event->get();

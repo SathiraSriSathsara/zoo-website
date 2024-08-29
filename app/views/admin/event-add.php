@@ -1,6 +1,5 @@
-<?php 
-include ("./event.php"); 
-session_start();
+<?php
+require ("./event.php"); 
 $msg = '';
 
 if(isset($_POST["btnAdd"])){

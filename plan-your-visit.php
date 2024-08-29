@@ -27,7 +27,6 @@
         <h2 class="pb-2 border-bottom">Our food outlets</h2>
         <div class="container p-5">
             <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus incidunt tenetur officia esse accusantium nulla ut, aliquam quae! Aliquid rerum accusamus ullam corporis cupiditate et enim officia autem, esse numquam!</p>
-
             <div class="container p-5">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
