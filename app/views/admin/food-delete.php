@@ -9,7 +9,6 @@ if (isset($_GET['id'])) {
     $foodOutlet = new FoodOutlet();
     $foodOutlet->setId($id);
 
-    // Retrieve the image name before deleting the record
     $foodItem = $foodOutlet->getById($id);
     if ($foodItem) {
         $imageName = $foodItem['image'];
@@ -18,7 +17,7 @@ if (isset($_GET['id'])) {
         if ($imageName) {
             $filePath = '../../../images/food-images/' . $imageName;
             if (file_exists($filePath)) {
-                unlink($filePath); // Delete the image file
+                unlink($filePath); 
             }
         }
 
