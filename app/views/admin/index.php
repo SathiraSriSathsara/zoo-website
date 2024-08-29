@@ -21,7 +21,7 @@ try{
 if (isset($user['first_name'])) {
     $userName = htmlspecialchars($user['first_name']);
 } else {
-    $userName = 'Guest'; // Default value if user data is not available
+    $userName = 'Guest'; 
 }
 
 ?>

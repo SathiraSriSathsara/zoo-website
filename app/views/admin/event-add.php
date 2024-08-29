@@ -12,14 +12,13 @@ if(isset($_POST["btnAdd"])){
     $id = $event->add();
 
     if ($id > 0) {
-        // Upload image
         $info = new SplFileInfo($_FILES["txtImage"]["name"]);
-        $imageName = $id . '.' . $info->getExtension(); // Create the image name
+        $imageName = $id . '.' . $info->getExtension(); 
         $newName = '../../../images/event-images/' . $imageName;
-        $event->setImage($imageName); // Set only the image name
+        $event->setImage($imageName); 
         $event->setId($id);
         move_uploaded_file($_FILES["txtImage"]["tmp_name"], $newName);
-        $event->updateImage(); // Update the image name in the database
+        $event->updateImage(); 
         $msg = "Event added successfully!";
     } else {
         $msg = "Failed to add event.";
@@ -78,7 +77,6 @@ if(isset($_POST["btnAdd"])){
                     <input type="submit"  class="btn btn-primary" value="Add" name="btnAdd">
                 </form>
             </div>
-
 
         </div>
     </main>

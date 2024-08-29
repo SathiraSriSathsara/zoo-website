@@ -8,7 +8,7 @@ $selectedEvent = null;
 if (isset($_POST["btnEdit"])) {
     $eventId = $_POST["btnEdit"];
     $event = new Event();
-    $eventDetails = $event->getById($eventId); // Fetch the event details by ID
+    $eventDetails = $event->getById($eventId); 
     if ($eventDetails) {
         $selectedEvent = $eventDetails;
     } else {
@@ -23,16 +23,16 @@ if (isset($_POST["btnUpdate"])) {
     $event->setShortDescription($_POST["txtShortDesc"]);
     $event->setDescription($_POST["txtDesc"]);
 
-    $event->update(); // Update event details
+    $event->update(); 
     $msg = "Event updated successfully!";
 
     if ($_FILES['txtImage']['size'] != 0) {
         $info = new SplFileInfo($_FILES["txtImage"]["name"]);
-        $imageName = $_POST["txtId"] . '.' . $info->getExtension(); // Create the image name
+        $imageName = $_POST["txtId"] . '.' . $info->getExtension(); 
         $newName = '../../../images/event-images/' . $imageName;
-        $event->setImage($imageName); // Set only the image name
+        $event->setImage($imageName); 
         move_uploaded_file($_FILES["txtImage"]["tmp_name"], $newName);
-        $event->updateImage(); // Update the image name in the database
+        $event->updateImage(); 
         $msg .= " Image updated successfully!";
     }
 }
@@ -40,7 +40,7 @@ if (isset($_POST["btnUpdate"])) {
 if (isset($_POST["btnDel"])) {
     $event = new Event();
     $event->setId($_POST["txtId"]);
-    $event->del(); // Delete the event
+    $event->del(); 
     $msg = "Event deleted successfully!";
 }
 ?>
