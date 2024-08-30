@@ -13,7 +13,7 @@
       <header
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-0  border-bottom bg-dark">
           <div class="col-md-3 mb-2 mb-md-0">
-              <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+              <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
                   <img src="./images/logo/nav_logo.png" class="logo" width="150px" alt="Logo Image">
               </a>
           </div>

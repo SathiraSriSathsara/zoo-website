@@ -53,6 +53,7 @@ if (isset($_POST["btnDel"])) {
     <title>Manage Event</title>
     <link href="../../../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="icon" type="image/x-icon" href="./images/icons/zooparc-favicon-green.png">
 </head>
 
 <body>

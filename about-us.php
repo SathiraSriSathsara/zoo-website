@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" type="image/x-icon" href="./images/icons/zooparc-favicon-green.png">
     <title><?php echo $page ?></title>
 </head>
 
@@ -24,7 +25,6 @@
     <!-- page content -->
 
     <!-- about -->
-    <img src="./images/Breadcrumb-image.png" class="img-fluid p-1 " alt="image">
     <div class="container p-5">
         <h3 class="text-center">Welcome to Zoo Parc: Where Wildlife Comes to Life</h3>
         <p class="text-center">

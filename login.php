@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" type="image/x-icon" href="./images/icons/zooparc-favicon-green.png">
   <title>Document</title>
 </head>
 
@@ -13,7 +14,7 @@
   <div class="login">
     <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST" action="./app/validate-login.php">
       <div class="row align-items-center">
-        <img src="" class="align-items-center" alt="logo-image">
+        <p class="text-center fs-4" >Login to your account</p>
       </div>
       <hr class="my-4">
       <div class="form-floating mb-3">
