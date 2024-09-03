@@ -10,7 +10,7 @@
   <title>Document</title>
 </head>
 
-<body class="bg-dark">
+<body class=" login-bg-img">
   <div class="login">
     <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST" action="./app/validate-login.php">
       <div class="row align-items-center">
@@ -25,7 +25,9 @@
         <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
-      <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
+      <div class="container d-flex justify-content-center">
+        <button class="w-100 btn btn-lg btn-success " type="submit">Sign in</button>
+      </div>
     </form>
   </div>
   <script src="./js/bootstrap.bundle.min.js"></script>
