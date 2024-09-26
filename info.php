@@ -13,8 +13,6 @@ try {
 
     if (!$info) {
         echo "Information not found.";
-    } else {
-        echo "Event found: " . htmlspecialchars($info['name']);
     }
 } catch (Exception $ex) {
     echo "Error: " . $ex->getMessage();
@@ -23,19 +21,29 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../css/main.css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
     <title><?php echo htmlspecialchars($info['name']); ?> - Details</title>
 </head>
+
 <body>
+    <?php
+    $page = "Plan your visit";
+    include './components/header.php'
+    ?>
     <div class="container mt-5">
         <h1><?php echo htmlspecialchars($info['name']); ?></h1>
-        <p><strong>Short Description:</strong> <?php echo htmlspecialchars($info['short_description']); ?></p>
+        <p><?php echo htmlspecialchars($info['short_description']); ?></p>
         <p><?php echo nl2br(htmlspecialchars($info['description'])); ?></p>
         <img src="<?php echo './images/info-images/' . htmlspecialchars($info['image']); ?>" alt="<?php echo htmlspecialchars($info['name']); ?>" class="img-fluid">
     </div>
+    <?php
+    include './components/footer.php'
+    ?>
 </body>
+
 </html>
